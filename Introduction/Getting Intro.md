@@ -162,28 +162,46 @@ The OWASP GenAI Security Project provides guidance on the major security risks a
 
 Understanding these vulnerabilities is an important starting point for AI penetration testing.
 
-### OWASP Top 10 — 2025 Edition
+## 4. OWASP GenAI LLM Top 10 — 2026 Edition
+
+The OWASP GenAI LLM Top 10 identifies the most important security risks affecting applications powered by Large Language Models.
+
+The 2026 edition reflects evolving AI attack techniques, real-world incidents, and emerging security challenges.
 
 | ID | Vulnerability | What It Means |
 |---|---|---|
-| LLM01 | Prompt Injection | Manipulating model behaviour through crafted instructions. |
-| LLM02 | Sensitive Information Disclosure | Exposing confidential information, PII, or business data. |
-| LLM03 | Supply Chain | Risks involving third-party models, datasets, platforms, and dependencies. |
-| LLM04 | Data and Model Poisoning | Manipulating training, fine-tuning, or embedding data. |
-| LLM05 | Improper Output Handling | Using model outputs without proper validation or sanitization. |
-| LLM06 | Excessive Agency | Giving AI agents excessive permissions or autonomy. |
-| LLM07 | System Prompt Leakage | Exposing confidential information contained in system instructions. |
-| LLM08 | Vector and Embedding Weaknesses | Exploiting weaknesses in vector databases and retrieval systems. |
-| LLM09 | Misinformation | Generating incorrect information that users or systems may trust. |
-| LLM10 | Unbounded Consumption | Excessive resource usage, potentially causing service disruption or unexpected costs. |
+| LLM01:2026 | Prompt Injection | Manipulating model behaviour through malicious direct or indirect instructions. |
+| LLM02:2026 | Sensitive Information Disclosure | Exposing confidential information, credentials, PII, or private business data. |
+| LLM03:2026 | Excessive Agency | Giving AI agents excessive permissions or autonomy to perform unauthorized actions. |
+| LLM04:2026 | Supply Chain | Risks from compromised models, datasets, dependencies, and third-party AI services. |
+| LLM05:2026 | Data and Model Poisoning | Manipulating training, fine-tuning, or other model-related data to influence behaviour. |
+| LLM06:2026 | Unbounded Consumption | Excessive resource usage leading to service disruption, performance degradation, or unexpected costs. |
+| LLM07:2026 | Misinformation | Producing incorrect or misleading information that users or connected systems may trust. |
+| LLM08:2026 | Hidden Context Exposure | Unintentionally exposing internal instructions, hidden context, or sensitive information in application context. |
+| LLM09:2026 | Vector and Embedding Weaknesses | Exploiting weaknesses in vector databases, embeddings, and retrieval mechanisms. |
+| LLM10:2026 | Improper Output Handling | Processing untrusted LLM outputs without proper validation, sanitization, or security controls. |
 
+### What Should We Focus on as Security Researchers?
+
+- **Prompt Injection:** Test whether malicious instructions can manipulate AI behaviour.
+- **Information Disclosure:** Check whether private information can be accessed through unauthorized requests.
+- **Excessive Agency:** Evaluate whether AI agents can perform actions beyond their intended permissions.
+- **Supply Chain:** Assess the security and integrity of third-party models and dependencies.
+- **Data Poisoning:** Understand how manipulated data can affect model behaviour.
+- **Unbounded Consumption:** Test resource limits, rate limiting, and cost controls.
+- **Misinformation:** Evaluate the reliability of AI-generated responses.
+- **Hidden Context Exposure:** Check whether internal application context is unintentionally revealed.
+- **Vector and Embedding Weaknesses:** Assess retrieval permissions and cross-user data isolation.
+- **Improper Output Handling:** Verify that generated content cannot trigger unsafe downstream operations.
+
+**Reference:** [OWASP GenAI LLM Top 10 — Official 2026 Release](https://github.com/GenAI-Security-Project/GenAI-LLM-Top10/tree/main/2026/final)
+
+**Note:** Always mention the edition and year when documenting vulnerabilities because category names and ID mappings can change between releases.
 **Why should penetration testers study this?**
 
 Each vulnerability represents a category of security testing. Our objective is to understand how these issues occur, reproduce them safely in controlled environments, and recommend appropriate mitigations.
 
-> Version note: The original ten-item list in older OWASP material was the 2023 v1.1 taxonomy. This repository uses the updated 2025 taxonomy above. OWASP has also published a 2026 edition, so always identify the version when documenting findings.
 
-Reference: [OWASP GenAI Security Project – LLM Top 10](https://genai.owasp.org/llm-top-10/)
 
 ---
 

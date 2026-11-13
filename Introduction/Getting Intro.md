@@ -1,5 +1,5 @@
 ---
-Title: Getting Started with LLM Penetration Testing
+title: Getting Started with LLM Penetration Testing
 tags:
   - introduction
   - getting-started
@@ -19,13 +19,13 @@ author: Ramcharan
 
 Welcome to the **LLM Penetration Testing & AI Security Knowledge Base**.
 
-I'm Ramcharan, and this repository is my hands-on learning journey into Artificial Intelligence Security, LLM penetration testing, and real-world AI threat analysis.
+I'm Ramcharan, and this repository documents my hands-on learning journey into Artificial Intelligence Security, LLM penetration testing, AI red teaming, and real-world AI threat analysis.
 
 AI is changing how companies build applications, automate workflows, process information, and make decisions. But as AI becomes more powerful, it also introduces new security challenges.
 
 This knowledge base focuses on understanding those risks, learning how attackers exploit AI applications, and discovering how security professionals identify, test, and mitigate them.
 
-**The objective is simple: Learn how AI systems work, understand how they can be attacked, and build the skills to secure them.**
+**Our objective is simple: Understand AI, identify its weaknesses, test applications responsibly, and learn how to secure intelligent systems.**
 
 ---
 
@@ -128,14 +128,14 @@ A simplified trust model looks like this:
 ```text
 System Instructions       → Application-defined instructions
 Developer Instructions    → Application behaviour and rules
-User Messages             → Untrusted user input
-External Documents        → Untrusted retrieved content
-Tool Outputs              → Data requiring validation
+User Messages              → Untrusted user input
+External Documents         → Untrusted retrieved content
+Tool Outputs               → Data requiring validation
 ```
 
 The security challenge is ensuring that untrusted content cannot override trusted instructions or trigger unauthorized actions.
 
-**Important concept: Indirect Prompt Injection**
+**Important Concept: Indirect Prompt Injection**
 
 An attacker may place malicious instructions inside a webpage, PDF, email, or document that an AI system later retrieves.
 
@@ -156,15 +156,9 @@ A model refusing a dangerous request is useful. An application preventing unauth
 
 ---
 
-## 4. OWASP Top 10 for LLM Applications
-
-The OWASP GenAI Security Project provides guidance on the major security risks affecting LLM-powered applications.
-
-Understanding these vulnerabilities is an important starting point for AI penetration testing.
-
 ## 4. OWASP GenAI LLM Top 10 — 2026 Edition
 
-The OWASP GenAI LLM Top 10 identifies the most important security risks affecting applications powered by Large Language Models.
+The OWASP GenAI LLM Top 10 identifies important security risks affecting applications powered by Large Language Models.
 
 The 2026 edition reflects evolving AI attack techniques, real-world incidents, and emerging security challenges.
 
@@ -194,14 +188,9 @@ The 2026 edition reflects evolving AI attack techniques, real-world incidents, a
 - **Vector and Embedding Weaknesses:** Assess retrieval permissions and cross-user data isolation.
 - **Improper Output Handling:** Verify that generated content cannot trigger unsafe downstream operations.
 
-**Reference:** [OWASP GenAI LLM Top 10 — Official 2026 Release](https://github.com/GenAI-Security-Project/GenAI-LLM-Top10/tree/main/2026/final)
+Reference: [OWASP GenAI Security Project — Official LLM Top 10](https://genai.owasp.org/llm-top-10/)
 
 **Note:** Always mention the edition and year when documenting vulnerabilities because category names and ID mappings can change between releases.
-**Why should penetration testers study this?**
-
-Each vulnerability represents a category of security testing. Our objective is to understand how these issues occur, reproduce them safely in controlled environments, and recommend appropriate mitigations.
-
-
 
 ---
 
@@ -304,11 +293,12 @@ First understand the architecture, then learn the attack surface, and finally pe
 
 Follow this learning sequence:
 
-**Step 1 — Understand LLM Fundamentals**
+### Step 1 — Understand LLM Fundamentals
 
 Read: `01-LLM-Fundamentals/LLM-Architecture.md`
 
 Learn:
+
 - What LLMs are.
 - Transformer architecture.
 - Tokens and tokenization.
@@ -316,22 +306,24 @@ Learn:
 - Model inference.
 - Embeddings.
 
-**Step 2 — Learn AI Threat Modeling**
+### Step 2 — Learn AI Threat Modeling
 
 Read: `02-Threat-Modeling/AI-Threat-Model.md`
 
 Learn:
+
 - Threat identification.
 - Assets and trust boundaries.
 - Attack scenarios.
 - Security requirements.
 - Risk assessment.
 
-**Step 3 — Understand the AI Attack Surface**
+### Step 3 — Understand the AI Attack Surface
 
 Read: `03-LLM-Attack-Surface/Attack-Surface-Map.md`
 
 Identify:
+
 - User input.
 - System instructions.
 - Model APIs.
@@ -340,18 +332,19 @@ Identify:
 - Plugins and tools.
 - Output handling.
 
-**Step 4 — Learn Prompt Injection**
+### Step 4 — Learn Prompt Injection
 
 Read: `04-Prompt-Injection/Introduction.md`
 
 Understand:
+
 - Direct prompt injection.
 - Indirect prompt injection.
 - Instruction conflicts.
 - Context manipulation.
 - Security mitigations.
 
-**Step 5 — Perform Your First Lab**
+### Step 5 — Perform Your First Lab
 
 Lab: `33-Labs/Lab-01-Basic-Prompt-Injection.md`
 
@@ -365,63 +358,94 @@ Practice in a controlled environment and document:
 6. Security impact.
 7. Recommended mitigation.
 
-**Learning recommendation:** Spend at least two hours understanding LLM architecture before beginning practical exploitation.
+**Learning Recommendation:** Spend at least two hours understanding LLM architecture before beginning practical exploitation.
 
 ---
 
-## 7. Tools Used in LLM Penetration Testing
+## 7. Tools You'll Need
 
-A security researcher should understand both traditional application security tools and tools specifically designed for AI security testing.
+Before starting LLM penetration testing, set up a basic toolkit. We'll use traditional application security tools alongside AI-specific security testing frameworks.
 
 ### Essential Tools
 
 | Tool | Purpose | Level |
 |---|---|---|
 | Python 3.10+ | Automation and security scripting | Beginner |
-| Burp Suite | Intercepting and analysing application/API traffic | Intermediate |
-| Garak | LLM vulnerability scanning and probing | Intermediate |
-| Promptfoo | LLM security evaluations and red-team testing | Beginner |
-| Docker | Building isolated lab environments | Beginner |
-| Obsidian | Maintaining research notes and documentation | Beginner |
+| Burp Suite | Intercepting and analysing API requests | Intermediate |
+| Garak | LLM vulnerability scanning and fuzzing | Intermediate |
+| Promptfoo | LLM evaluation and red-team testing | Beginner |
+| Docker | Creating isolated lab environments | Beginner |
+| Obsidian | Organising research notes and documentation | Beginner |
 
 ### Additional Tools Worth Learning
 
 | Tool | Purpose |
 |---|---|
-| Microsoft PyRIT | Framework for AI red teaming and risk assessment |
+| Microsoft PyRIT | AI red teaming and security assessment |
 | OWASP ZAP | Web application and API security testing |
-| Semgrep | Static analysis and insecure code detection |
-| MITRE ATLAS | Understanding adversarial threats against AI systems |
+| Semgrep | Static application security testing |
+| MITRE ATLAS | AI threat modelling and adversarial techniques |
 | Wireshark | Network traffic analysis |
-| Git and GitHub | Version control and security research documentation |
+| Git & GitHub | Version control and research documentation |
 
-### Setting Up the Basic Environment
+### Installation and Setup
 
-**1. Create a Python virtual environment**
+**Step 1: Create a Python virtual environment**
 
 ```bash
 python3 -m venv llm-pentest
 ```
 
-**2. Activate the environment on Linux/Kali**
+**Step 2: Activate the environment**
+
+Linux / Kali Linux:
 
 ```bash
 source llm-pentest/bin/activate
 ```
 
-**3. Install the initial Python packages**
+Windows:
+
+```powershell
+llm-pentest\Scripts\activate
+```
+
+**Step 3: Upgrade pip and install Python packages**
 
 ```bash
+python -m pip install --upgrade pip
+
 pip install garak promptfoo openai anthropic langchain
 ```
 
-**4. Install Docker on supported Linux systems**
+**Step 4: Install Docker**
+
+For supported Linux distributions:
 
 ```bash
-curl -fsSL https://get.docker.com | sh
+curl -fsSL https://get.docker.com -o get-docker.sh
+
+sudo sh get-docker.sh
 ```
 
-**Note:** Docker installation commands differ across Linux distributions and operating systems. Follow the official installation documentation for your environment.
+**Step 5: Verify installations**
+
+```bash
+python --version
+pip --version
+docker --version
+```
+
+**Important:** Install tools individually, follow their official documentation, and use isolated environments for security testing. Never test against systems without permission.
+
+Official installation references:
+
+- [Python](https://www.python.org/downloads/)
+- [Burp Suite](https://portswigger.net/burp)
+- [Garak](https://garak.ai/)
+- [Promptfoo](https://www.promptfoo.dev/docs/)
+- [Docker](https://docs.docker.com/get-docker/)
+- [Obsidian](https://obsidian.md/)
 
 ---
 
@@ -457,24 +481,31 @@ All practical exercises must be conducted against applications we own or have ex
 
 ---
 
-## 9. Community and Learning Resources
+## 9. Community and Resources
 
-Continuous learning is essential in AI security because attack techniques, models, and defensive technologies evolve rapidly.
+Learning cybersecurity is not just about tools. Reading research, following security communities, and understanding real-world vulnerabilities are equally important.
+
+### Repository Resources
 
 Explore these sections as the repository grows:
 
-- `40-Resources/Communities.md` — AI security communities, forums, and discussion groups.
-- `35-Research-Papers/Reading-List.md` — Important research papers and technical publications.
-- `38-Certifications/AI-Security-Certifications.md` — Relevant AI and cybersecurity certifications.
-- `37-Interview-Preparation/AI-Security-Interview-Guide.md` — Technical interview preparation and career guidance.
+| Resource | Description |
+|---|---|
+| `40-Resources/Communities.md` | AI security communities, Discord servers, forums, and Slack groups |
+| `35-Research-Papers/Reading-List.md` | Essential AI security research papers |
+| `38-Certifications/AI-Security-Certifications.md` | Relevant AI and cybersecurity certifications |
+| `37-Interview-Preparation/AI-Security-Interview-Guide.md` | Technical interview preparation and career guidance |
 
-Additional references:
+### Official Learning Resources
 
-- [OWASP GenAI Security Project](https://genai.owasp.org/)
-- [MITRE ATLAS](https://atlas.mitre.org/)
-- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
-- [Garak Documentation](https://garak.ai/)
-- [Promptfoo Documentation](https://www.promptfoo.dev/docs/)
+| Resource | Focus |
+|---|---|
+| [OWASP GenAI Security Project](https://genai.owasp.org/) | LLM security vulnerabilities and guidance |
+| [MITRE ATLAS](https://atlas.mitre.org/) | Adversarial threats against AI systems |
+| [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) | AI risk management |
+| [Garak](https://garak.ai/) | LLM vulnerability testing |
+| [Promptfoo](https://www.promptfoo.dev/docs/) | AI evaluation and red teaming |
+| [Microsoft PyRIT](https://github.com/Azure/PyRIT) | AI red teaming framework |
 
 ---
 
@@ -486,7 +517,7 @@ We will gradually move from understanding AI architecture to identifying vulnera
 
 The focus will remain on practical learning rather than memorising definitions.
 
-**Our learning path:**
+### Our Learning Path
 
 1. LLM Fundamentals and Architecture.
 2. AI Threat Modeling.
@@ -501,8 +532,18 @@ The focus will remain on practical learning rather than memorising definitions.
 
 ---
 
+## Final Note
+
+AI security is an evolving field. New models, attack techniques, vulnerabilities, and defensive technologies emerge continuously.
+
+The goal of this repository is to build practical knowledge, document experiments, understand real-world attack scenarios, and learn how to develop more secure AI applications.
+
+**Learn the architecture. Understand the attack surface. Test responsibly. Build secure AI systems.**
+
+---
+
 **Next Chapter:** [LLM Architecture](../01-LLM-Fundamentals/LLM-Architecture.md)
 
-*Learn the architecture first. Understand the attack surface next. Test responsibly. Build secure AI systems.*
+**Author:** Ramcharan
 
-**— Ramcharan | AI Security & Cybersecurity Research**
+**Focus:** AI Security | LLM Penetration Testing | Ethical Hacking | AI Red Teaming
